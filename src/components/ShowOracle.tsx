@@ -30,26 +30,31 @@ export const ShowOracle: FC = () => {
     return (
         <div>
             <button
-                className="group w-60 m-2  disabled:animate-none  "
+                className="group m-2  disabled:animate-none  "
                 onClick={onClick} disabled={!publicKey}
             >
                 <div className="hidden group-disabled:block">
                     
                     <div className='hp-img-box'>
-                        <img className="hp-img-box" src="https://solgats.io/asktheoracle/oracle.png">
+                        <img className="hp-img-box" src="../../oracle.png">
                         </img>
                     </div>
 
                 </div>
                 <span className="block group-disabled:hidden" > 
-                    
-                    <iframe
-                        allow="microphone;"
-                        width="350"
-                        height="430"
-                        className="yek"
-                        src="https://console.dialogflow.com/api-client/demo/embedded/d752ef47-0abc-41a9-bf98-3824719dbdc6">
-                    </iframe> 
+
+                    <div className="oracle-cover">
+                    </div>
+
+                    <div className="oracle-container">
+                        <iframe
+                            allow="microphone;"
+                            width="350"
+                            height="430"
+                            className="yek"
+                            src="https://console.dialogflow.com/api-client/demo/embedded/d752ef47-0abc-41a9-bf98-3824719dbdc6">
+                        </iframe> 
+                    </div>
 
                 </span>
             </button>
