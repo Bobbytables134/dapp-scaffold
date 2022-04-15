@@ -15,7 +15,7 @@ export const AppBar: FC = props => {
         <div className="navbar-start">
           
         
-          <div className="hidden sm:inline w-22 h-22 md:p-2">
+          <div className="sm:inline w-22 h-22 md:p-2">
             <img src="../../solgats-logo.png"></img>
           </div>
         </div>
