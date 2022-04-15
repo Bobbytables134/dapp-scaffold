@@ -27,6 +27,25 @@ export const ShowOracle: FC = () => {
         }
     }, [publicKey, notify, signMessage]);
 
+  // ------------------------------------------------ 
+  // ------------ START SHOW PEW BALANCE TEST
+  // ------------------------------------------------ 
+  const web3 = require("@solana/web3.js");
+(async () => {
+  const solana = new web3.Connection("https://dawn-black-haze.solana-mainnet.quiknode.pro/2b865c1f0dda4e7e69f261035a6f2bffef825b22/");
+  const accBalance = await solana.getTokenAccountBalance(
+    new web3.PublicKey("BbsB8JVa6gKrD1GfoRKkLzFxq2eC52gdAgG8GrWbg748")
+  );
+  
+  console.log("Total $PEW supply is " + accBalance.value.uiAmountString);
+  console.log("Your $PEW balance is ");
+
+})();
+
+  // ------------------------------------------------ 
+  // ------------ END SHOW PEW BALANCE TEST
+  // ------------------------------------------------ 
+  
     return (
         <div>
             <button
