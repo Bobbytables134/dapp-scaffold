@@ -95,3 +95,23 @@ small{
     margin-top: -78px;
 }
 }
+
+@media only screen and (max-width: 1024px) {
+  #oracle-subtext{
+    margin-top:-16px; 
+  }
+  .oracle-move-cover {
+    margin-top: -79px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  #oracle-subtext{
+    display:none;
+  }
+  .oracle-move-cover {
+    margin-top: -63px;
+}
+}
+
+

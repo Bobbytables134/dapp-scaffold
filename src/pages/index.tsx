@@ -8,9 +8,10 @@ const Home: NextPage = (props) => {
       <Head>
         <title>SolGats - Ask The Oracle</title>
         <meta
-          name="Peer into the future of SolGats journey with the all seeing eye of The Oracle."
-          content="SolGats - Ask The Oracle"
+          name="SolGats - Ask The Oracle"
+          content="Peer into the future of SolGats journey with the all seeing eye of The Oracle."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HomeView />
     </div>
