@@ -33,7 +33,7 @@ export const HomeView: FC = ({ }) => {
     <div className="md:hero mx-auto p-4">
       <div className="md:hero-content flex flex-col">
         <h1 id="oracle-headline" className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          Ask The Oracle 
+          Ask The Oracle 1
         </h1>
         <h4 className="md:w-full text-center text-slate-300 my-2">
           <p id="oracle-subtext">Peer into the future of SolGats' journey<br></br>
