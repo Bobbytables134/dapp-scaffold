@@ -4,6 +4,7 @@ import bs58 from 'bs58';
 import { FC, useCallback } from 'react';
 import { sign } from 'tweetnacl';
 import { notify } from "../utils/notifications";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export const ShowOracle: FC = () => {
     const { publicKey, signMessage } = useWallet();
@@ -57,7 +58,9 @@ export const ShowOracle: FC = () => {
                     <div className='hp-img-box'>
                         <img className="hp-img-box" src="../../oracle.png">
                         </img>
+
                     </div>
+                    <WalletMultiButton className="group w-60 m-2 btn animate-pulse disabled:animate-none bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..." />
 
                 </div>
                 <span className="block group-disabled:hidden" > 

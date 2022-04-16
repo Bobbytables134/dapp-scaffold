@@ -8,7 +8,6 @@ import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 // Components
 import { RequestAirdrop } from '../../components/RequestAirdrop';
 import { ShowOracle } from '../../components/ShowOracle';
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 import pkg from '../../../package.json';
 
@@ -44,7 +43,6 @@ export const HomeView: FC = ({ }) => {
             
         <div className="text-center oracle-move-cover">
             <ShowOracle/> 
-            <WalletMultiButton className="group w-60 m-2 btn animate-pulse disabled:animate-none bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..." />
         </div>
 
       </div>
