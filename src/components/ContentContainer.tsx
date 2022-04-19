@@ -27,6 +27,16 @@ export const ContentContainer: FC = props => {
               <a>Basics</a>
             </Link>
           </li>
+          <li>
+            <Link href="/oracle">
+              <a>Ask The Oracle</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/artamatic">
+              <a>Artamatic</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

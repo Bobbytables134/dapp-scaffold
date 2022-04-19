@@ -13,8 +13,7 @@ export const AppBar: FC = props => {
       {/* NavBar / Header */}
       <div className="navbar flex flex-row md:mb-2 shadow-lg bg-neutral text-neutral-content">
         <div className="navbar-start">
-          
-        
+
           <div className="sm:inline w-22 h-22 md:p-2">
             <img src="../../solgats-logo.png"></img>
           </div>

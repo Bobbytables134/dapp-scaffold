@@ -48,14 +48,25 @@ export const ShowOracle: FC = () => {
   // ------------------------------------------------ 
   
     return (
-        <div>
+        
+        <div className="outer-center">
             <button
                 className="group m-2  disabled:animate-none  "
                 onClick={onClick} disabled={!publicKey}
             >
+
+                
                 <div className="hidden group-disabled:block">
-                    
-                    <div className='hp-img-box'>
+                <h1 id="oracle-headline" className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
+                Ask The Oracle
+                </h1>
+
+                <h4 className="md:w-full text-center text-slate-300 my-2">
+                <p id="oracle-subtext">Peer into the future of SolGats' journey<br></br>
+                with the all seeing eye of The Oracle.</p>
+                
+                </h4>
+                    <div className='hp-img-box'>  
                         <img className="hp-img-box" src="../../oracle.png">
                         </img>
 
@@ -64,10 +75,14 @@ export const ShowOracle: FC = () => {
 
                 </div>
                 <span className="block group-disabled:hidden" > 
+                <div className="oracle-cover">
+                <h1 id="oracle-headline2" className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
+                Ask The Oracle
+                </h1>
+            
+                </div>
 
-                    <div className="oracle-cover">
-                    </div>
-
+                   
                     <div className="oracle-container">
                         <iframe
                             allow="microphone;"

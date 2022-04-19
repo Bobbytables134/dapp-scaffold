@@ -1,20 +1,22 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { BasicsView } from "../views";
+import { OracleView } from "../views/oracle";
+import { ShowOracle } from "../components/ShowOracle";
 
-const Basics: NextPage = (props) => {
+const Oracle: NextPage = (props) => {
   return (
     <div>
       <Head>
         <title>SolGats</title>
         <meta
           name="description"
-          content="asd"
+          content="SolGats"
         />
       </Head>
-      <BasicsView />
+     
+      <ShowOracle />
     </div>
   );
 };
 
-export default Basics;
+export default Oracle;
