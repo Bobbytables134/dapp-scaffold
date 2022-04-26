@@ -19,8 +19,7 @@ export const HomeView: FC = ({ }) => {
   const wallet = useWallet();
   const { connection } = useConnection();
   const web3 = require("@solana/web3.js");
-  let [count, setCount] = useState(0);
-  const pew = useRef(0);
+  let [pewBalance, setPewBalance] = useState(0);
 
   const getPewBalance = async (MY_WALLET_ADDRESS) => {
     const connection = new web3.Connection("https://dawn-black-haze.solana-mainnet.quiknode.pro/2b865c1f0dda4e7e69f261035a6f2bffef825b22/");
@@ -46,7 +45,7 @@ export const HomeView: FC = ({ }) => {
     });
     pewToken.forEach((account, i) => {
       let pewAmount = account.account.data["parsed"]["info"]["tokenAmount"]["uiAmount"]
-      pew.current = pewAmount;
+      setPewBalance(pewAmount);
     });
   };
 
@@ -60,10 +59,7 @@ export const HomeView: FC = ({ }) => {
   return (
     <div className="md:hero mx-auto p-4">
       <div className="md:hero-content flex flex-col">
-        <button onClick={() => setCount(pew.current)}>
-          View PEW Balance
-        </button>
-        <h1>You have {pew.current} $PEW</h1>
+        <h1>You have {pewBalance} $PEW</h1><br/>
         <h1 id="oracle-headline" className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
           Ask The Oracle 
         </h1>
