@@ -1,11 +1,52 @@
-import { FC } from 'react';
+import {FC, useEffect, useState} from 'react';
 import Link from "next/link";
 
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useAutoConnect } from '../contexts/AutoConnectProvider';
+import {useConnection, useWallet} from "@solana/wallet-adapter-react";
+import {TOKEN_PROGRAM_ID} from "@solana/spl-token";
 
 export const AppBar: FC = props => {
   const { autoConnect, setAutoConnect } = useAutoConnect();
+  const wallet = useWallet();
+  const { connection } = useConnection();
+  const web3 = require("@solana/web3.js");
+  let [pewBalance, setPewBalance] = useState(0);
+
+  const getPewBalance = async (MY_WALLET_ADDRESS) => {
+    const connection = new web3.Connection("https://dawn-black-haze.solana-mainnet.quiknode.pro/2b865c1f0dda4e7e69f261035a6f2bffef825b22/");
+
+    const accounts = await connection.getParsedProgramAccounts(
+        TOKEN_PROGRAM_ID,
+        {
+          filters: [
+            {
+              dataSize: 165, // number of bytes
+            },
+            {
+              memcmp: {
+                offset: 32, // number of bytes
+                bytes: MY_WALLET_ADDRESS, // base58 encoded string
+              },
+            },
+          ],
+        }
+    );
+    const pewToken =  accounts.filter(function(account) {
+      return account.account.data["parsed"]["info"]["mint"] == "AvYRFjk4imoGSAYxcwfm4dM6qQigR6DZJt3vDatdgPeP";
+    });
+    pewToken.forEach((account, i) => {
+      let pewAmount = account.account.data["parsed"]["info"]["tokenAmount"]["uiAmount"]
+      setPewBalance(pewAmount);
+    });
+  };
+
+  useEffect(() => {
+    if (wallet.publicKey) {
+      let MY_WALLET_ADDRESS = wallet.publicKey.toBase58();
+      getPewBalance(MY_WALLET_ADDRESS);
+    }
+  }, [wallet.publicKey, connection])
 
   return (
     <div>
@@ -24,6 +65,7 @@ export const AppBar: FC = props => {
 
         {/* Wallet & Settings */}
         <div className="navbar-end">
+          {pewBalance} $PEW
           <div className="dropdown">
             <div tabIndex={0} className="btn btn-square btn-ghost text-right">
               <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
