@@ -114,4 +114,82 @@ small{
 }
 }
 
+.rank-container {
+  background-color: #0047AB;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%
+}
 
+.loaded-nft {
+  width: 25%;
+  float: left;
+}
+
+.loaded-nft img {
+  padding-top: 10px;
+}
+
+.upgradeables {
+  width: 75%;
+  float: right;
+  padding: 0 10px;
+}
+
+.choose-solgat {
+  background-color: #0047AB;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.choose-solgat h3 {
+  padding-left: 10px;
+}
+
+h3 svg {
+  padding-right: 5px;
+}
+
+.choose-solgat-container {
+  display: flex;
+}
+
+.choose-solgat-container > .solgat-nft,
+.choose-solgat-container > .solgat-nft-placeholder{
+  flex: 1 0 0;
+  border: 1px solid transparent;
+  margin: 10px;
+}
+
+.choose-solgat-container > .solgat-nft:active,
+.choose-solgat-container > .solgat-nft:hover {
+  border: 1px solid white;
+}
+
+.choose-solgat-container > .solgat-nft .placeholder-nft,
+.choose-solgat-container > .solgat-nft-placeholder .placeholder-nft{
+  background-color: grey;
+  height: 100%;
+  width: 100%;
+}
+
+.choose-solgat-container > .solgat-nft-placeholder {
+  pointer-events: none;
+}
+
+.choose-solgat-container svg {
+  position:relative;
+  top: calc(50% - 20px);
+}
+
+.upgradeables table {
+  width: 100%;
+}
+
+.upgradeables table th {
+  text-align: left;
+}
+
+.upgradeables table td svg{
+  padding-right: 10px;
+}
